@@ -2,6 +2,8 @@
 
 A responsive React organizer styled after the supplied mint-grid/paper-card reference. It includes the supplied 2026 and 2027 XMUM academic calendar images, the September 2026 timetable, course checklists, daily tasks, assignments, exams, meetings, and countdowns. Icons come from `lucide-react`.
 
+The moon/sun button switches between light and dark mode and remembers the choice on each device. The weekly timetable shows one card per course per day; open it to see and edit all distinct class times or alternative groups. Weekend dates and the public holidays printed on the supplied calendars are highlighted in the year view. Holiday dates are subject to change according to the calendars.
+
 The app works in **preview mode** immediately. Preview data is kept in that browser only. To sync between devices and receive emails, complete the setup below.
 
 ## 1. Supabase
@@ -12,6 +14,8 @@ The app works in **preview mode** immediately. Preview data is kept in that brow
 4. Copy **Project URL** and the **publishable/anon key** from **Project Settings → API Keys**. The service-role key is separate and must remain server-side.
 
 On first sign-in, the five courses and class timetable are copied into your account. The source timetable shows alternative OS and Algorithms groups, so entries marked “Option” or “alternative group” should be removed if they are not yours. All personal classes, courses, tasks, exams, and meetings can be edited in the app.
+
+If you already deployed an earlier ZIP, replace the project files in the same GitHub repository and push a new commit. Vercel will rebuild automatically. Existing Supabase data stays in place; these interface changes require no new SQL migration.
 
 ## 2. Resend email
 
