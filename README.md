@@ -4,6 +4,15 @@ A responsive React organizer styled after the supplied mint-grid/paper-card refe
 
 The moon/sun button switches between light and dark mode and remembers the choice on each device. The weekly timetable shows one card per course per day; open it to see and edit all distinct class times or alternative groups. Weekend dates and the public holidays printed on the supplied calendars are highlighted in the year view. Holiday dates are subject to change according to the calendars.
 
+## Put an icon on your phone or tablet
+
+After deploying the latest files to Vercel, open the **production URL** in the device browser:
+
+- **Android phone or tablet:** In Chrome, open the menu (three dots) and select **Install app** or **Add to Home screen**. Confirm the name **Paper Plan**.
+- **iPhone or iPad:** In Safari, tap **Share → Add to Home Screen**, turn on **Open as Web App** if shown, then tap **Add**.
+
+The icon opens the organizer in its own app window. Sign in with the same Supabase account on every device to see the same courses, tasks, and events. Internet access is required for synced data; this project does not cache private organizer data for offline use. The app icon and manifest are in `public/icons/` and `public/manifest.webmanifest`. There are no additional Supabase settings for home-screen installation.
+
 The app works in **preview mode** immediately. Preview data is kept in that browser only. To sync between devices and receive emails, complete the setup below.
 
 ## 1. Supabase

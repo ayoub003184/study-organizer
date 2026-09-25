@@ -34,7 +34,7 @@ export default function App(){
   const [now,setNow]=useState(Date.now()),[message,setMessage]=useState(''),[busy,setBusy]=useState(false),[menu,setMenu]=useState(false);
   const [theme,setTheme]=useState(()=>{try{return localStorage.getItem('paper-plan-theme')==='dark'?'dark':'light'}catch{return 'light'}});
   const seeding=useRef(false);
-  useEffect(()=>{document.documentElement.dataset.theme=theme;try{localStorage.setItem('paper-plan-theme',theme)}catch{}},[theme]);
+  useEffect(()=>{document.documentElement.dataset.theme=theme;document.querySelector('meta[name="theme-color"]')?.setAttribute('content',theme==='dark'?'#10212b':'#e9f6f4');try{localStorage.setItem('paper-plan-theme',theme)}catch{}},[theme]);
   const toggleTheme=()=>setTheme(old=>old==='dark'?'light':'dark');
   useEffect(()=>{const timer=setInterval(()=>setNow(Date.now()),30000);return()=>clearInterval(timer)},[]);
   useEffect(()=>{if(!db)return;db.auth.getSession().then(({data})=>setSession(data.session));const {data:{subscription}}=db.auth.onAuthStateChange((_evt,s)=>setSession(s));return()=>subscription.unsubscribe()},[]);
